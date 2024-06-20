@@ -7,13 +7,13 @@ nazwa: list = [
 ]
 
 obiekty: list = [
-    {'name': 'Kino plenerowe na plaży', 'location': 'Gdynia'},
-    {'name': 'Kino plenerowe', 'location': 'Warszawa'},
-    {'name': 'Centrum filmowe', 'location': 'Kraków'},
+    {'name': 'Kino plenerowe na plaży', 'location': 'Gdynia', 'festiwal filmowy': 'Nadmorski Festiwal Filmowy'},
+    {'name': 'Kino plenerowe', 'location': 'Warszawa', 'festiwal filmowy': 'Filmy nad Wisłą'},
+    {'name': 'Centrum filmowe', 'location': 'Kraków', 'festiwal filmowy': 'Krakowski Festiwal Filmu'},
 ]
 
 pracownicy: list = [
-    {'name': 'Aneta', 'surname': 'Nowak', 'location': 'Gdynia'},
-    {'name': 'Bob', 'surname': 'Smith', 'location': 'Warszawa'},
-    {'name': 'Robert', 'surname': 'Kowalski', 'location': 'Kraków'},
+    {'name': 'Aneta', 'surname': 'Nowak', 'location': 'Gdynia', 'miejsce pracy': 'Nadmorski Festiwal Filmowy'},
+    {'name': 'Bob', 'surname': 'Smith', 'location': 'Warszawa', 'miejsce pracy': 'Filmy nad Wisłą'},
+    {'name': 'Robert', 'surname': 'Kowalski', 'location': 'Kraków', 'miejsce pracy': 'Krakowski Festiwal Filmu'},
 ]

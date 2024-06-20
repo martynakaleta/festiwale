@@ -43,13 +43,14 @@ def update_festiwal(nazwa: list) -> None:
 def read_miejsca(obiekty: list) -> None:
     print("Wyświetl listę obiektów: ")
     for miejsca in obiekty:
-        print(f" {miejsca['name']} znajduje się w: {miejsca['location']} ")
+        print(f" {miejsca['name']} znajduje się w: {miejsca['location']}")
 
 def add_miejsca(obiekty: list) -> None:
     print("Dodaj nowe miejsce:")
     new_miejsce: dict = {
         'name': input('Wpisz nazwę nowego obiektu: '),
         'location': input('Wpisz lokalizację nowego obiektu: '),
+        'festiwal filmowy': input('Wpisz nazwę festiwalu:'),
     }
     obiekty.append(new_miejsce)
 
@@ -73,13 +74,14 @@ def update_miejsca(obiekty: list) -> None:
         if miejsca["name"] == name:
             miejsca["name"] = input("Wpisz nową nazwę obiektu: ")
             miejsca["location"] = input("Wpisz nową lokalizację obiektu: ")
+            miejsca["festiwal filmowy"] = input("Wpisz nowy festiwal")
 
 #funkcje dla pracownicy
 
 def read_workers(pracownicy: list) -> None:
     print("Wyświetl listę pracowników: ")
     for workers in pracownicy:
-        print(f" Pracownik: {workers['name']} {workers['surname']}, pracuje w : {workers['location']} ")
+        print(f" Pracownik: {workers['name']} {workers['surname']}, pracuje w : {workers['location']}")
 
 def add_workers(employes: list) -> None:
     print("Dodaj nowego pracownika:")
@@ -87,6 +89,7 @@ def add_workers(employes: list) -> None:
         'name': input('Wpisz imię nowego pracownika: '),
         'surname': input('Wpisz nazwisko nowego pracownika: '),
         'location': input('Wpisz lokalizację nowego pracownika: '),
+        'miejsce pracy': input('Wpisz miejsce pracy:'),
     }
     employes.append(new_workers)
 
@@ -110,6 +113,7 @@ def update_workers(pracownicy: list) -> None:
             workers["name"] = input("Wpisz nowe imię: ")
             workers['surname'] = input('Wpisz nowe nazwisko:')
             workers["location"] = input("Wpisz nową lokalizację: ")
+            workers["miejsce pracy"] = input("Wpisz miejsce pracy:")
 
 #mapy
 
@@ -158,3 +162,20 @@ def full_map_pracownicy(pracownicy):
     map_pracownicy.save(f'map_pracownicy.html')
 
 
+def show_pracownicy_festiwalu(nazwa,pracownicy)->None:
+    kogo_szukasz= input("nazwa festiwalu, którego lista pracowników ma sie wyświetlić:")
+    for festiwal in nazwa:
+        if festiwal['name'] == kogo_szukasz:
+            print(f"Pracownicy festiwalu {festiwal['name']}")
+            for workers in pracownicy:
+                if workers["miejsce pracy"] == festiwal["name"]:
+                    print(f"Pracownik {workers['name']} {workers['surname']}")
+
+def show_miejsca_festiwalu(nazwa,obiekty)->None:
+    kogo_szukasz = input ("nazwa festiwalu, którego ma być wyświetlane miejsce, gdzie się odbywa:")
+    for festiwal in nazwa:
+        if festiwal['name'] == kogo_szukasz:
+            print(f"Miejsce festiwalu {festiwal['name']}")
+            for miejsca in obiekty:
+                if miejsca["festiwal filmowy"] == festiwal["name"]:
+                    print(f"Miejsce,w którym odbywa się festiwal: {miejsca['name']}")

@@ -1,5 +1,5 @@
 from data import nazwa, obiekty, pracownicy
-from crud import read_festiwal, add_festiwal, search_festiwal, remove_festiwal, update_festiwal, read_workers, add_workers, search_workers, remove_workers, update_workers,read_miejsca,add_miejsca, search_miejsca, remove_miejsca, update_miejsca, full_map, full_map_1, full_map_pracownicy
+from crud import read_festiwal, add_festiwal, search_festiwal, remove_festiwal, update_festiwal, read_workers, add_workers, search_workers, remove_workers, update_workers,read_miejsca,add_miejsca, search_miejsca, remove_miejsca, update_miejsca, full_map, full_map_1, full_map_pracownicy, show_pracownicy_festiwalu, show_miejsca_festiwalu
 
 if __name__ == '__main__':
     print('Logowanie')
@@ -36,6 +36,8 @@ def main() -> None:
         print('16. usuń pracownika')
         print('17. edytuj pracownika')
         print('18. wyświetl mapę zbiorową pracowników')
+        print('19. wyszukaj pracownika, który pracuje w danym festiwalu')
+        print('20. wyszukaj lokalizację dla festiwalu')
 
 
 
@@ -62,6 +64,9 @@ def main() -> None:
         if menu_option == "16": remove_workers(pracownicy)
         if menu_option == "17": update_workers(pracownicy)
         if menu_option == "18": full_map_pracownicy(pracownicy)
+        if menu_option == "19": show_pracownicy_festiwalu(nazwa, pracownicy)
+        if menu_option == "20": show_miejsca_festiwalu(nazwa, obiekty)
+
 
 
 
